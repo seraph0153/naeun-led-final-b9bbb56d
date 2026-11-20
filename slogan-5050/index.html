@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나은필병원 LED 슬로건 50:50 시안">
+<meta property="og:description" content="15분 영상의 슬로건 20칸을 기존 공익 10개와 원장님 슬로건 10개로 번갈아 구성. 원장님 슬로건에는 진료과 이름표와 아이콘 배지. 문구·진료과·심의 확인 부탁드립니다.">
+<meta property="og:image" content="https://seraph0153.github.io/naeun-led-final-b9bbb56d/slogan-5050/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<title>나은필병원 슬로건 50:50 시안</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+/* 레이아웃: 위에서 아래로 한 줄 읽기 — 구성 막대 → 현장 → 20칸 카드(2열) → 문구 다듬기 표 → 확인 사항 */
+:root {
+  --bg:#F7F4EE; --card:#FFFFFF; --ink:#0E1B2E; --muted:#5D6573; --line:#E4DDD0;
+  --pub:#D9902B; --pub-soft:#FCEBD0; --green:#3C9A73; --green-soft:#DCEFE5; --blue:#308ABB; --blue-soft:#DCEBF5;
+  --logo:#D9D3C7; --gold:#F5C518;
+  --f-head:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --f-body:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --f-num:'Inter','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#10161F; --card:#18212D; --ink:#EEF1F5; --muted:#9BA5B3; --line:#2A3544;
+  --pub:#F0B256; --pub-soft:#3A2C17; --green:#5CC29C; --green-soft:#183429; --blue:#5DB0DE; --blue-soft:#162C3B;
+  --logo:#344050; color-scheme:dark; } }
+:root[data-theme="dark"] {
+  --bg:#10161F; --card:#18212D; --ink:#EEF1F5; --muted:#9BA5B3; --line:#2A3544;
+  --pub:#F0B256; --pub-soft:#3A2C17; --green:#5CC29C; --green-soft:#183429; --blue:#5DB0DE; --blue-soft:#162C3B;
+  --logo:#344050; color-scheme:dark; }
+* { box-sizing:border-box }
+body { background:var(--bg); color:var(--ink); font:400 15px/1.65 var(--f-body); word-break:keep-all; }
+.wrap { max-width:1160px; margin:0 auto; padding-block:40px 64px; padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px)); display:flex; flex-direction:column; gap:56px; }
+h1,h2,h3 { font-family:var(--f-head); text-wrap:balance; margin:0; letter-spacing:-0.01em }
+h1 { font-weight:900; font-size:clamp(30px,5vw,46px); line-height:1.18 }
+h2 { font-weight:900; font-size:clamp(21px,3vw,26px); line-height:1.3 }
+p { margin:0 }
+.eyebrow { font:700 12px/1 var(--f-body); letter-spacing:.08em; color:var(--muted) }
+.lead { font-size:17px; max-width:62ch; color:var(--ink) }
+.sub { color:var(--muted); max-width:66ch }
+section { display:flex; flex-direction:column; gap:18px }
+.top { display:flex; flex-direction:column; gap:14px }
+.facts { display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:6px; font-size:14px; color:var(--muted) }
+.facts b { color:var(--ink); font-weight:700 }
+.num, .time, .no { font-family:var(--f-num); font-variant-numeric:tabular-nums }
+
+/* 15분 막대 */
+.timeline { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; display:flex; flex-direction:column; gap:12px }
+.bands { display:flex; font-size:12px; color:var(--muted); font-weight:700 }
+.bands span { flex:1; border-left:2px solid var(--line); padding-left:6px }
+.bar { display:flex; height:46px; gap:2px }
+.seg { display:flex; align-items:center; justify-content:center; border-radius:4px; min-width:0; text-decoration:none }
+.seg.logo { background:var(--logo) }
+.seg.s span { font:700 11px/1 var(--f-num); color:#fff }
+.seg.pub { background:var(--pub) }
+.seg.hos.green { background:var(--green) }
+.seg.hos.blue { background:var(--blue) }
+.seg.s:hover, .seg.s:focus-visible { outline:2px solid var(--ink); outline-offset:1px }
+.ticks { display:flex; justify-content:space-between; font:500 12px/1 var(--f-num); color:var(--muted) }
+.legend { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13px; color:var(--muted) }
+.legend i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-1px }
+@media (max-width:640px) { .seg.s span { display:none } .bar { height:34px; gap:1px } }
+
+/* 현장 */
+.site { display:grid; grid-template-columns:1fr 1fr; gap:16px }
+.site figure { margin:0; display:flex; flex-direction:column; gap:8px; min-width:0 }
+.site img { width:100%; height:auto; border-radius:10px; display:block }
+.site figcaption { font-size:13px; color:var(--muted) }
+@media (max-width:720px) { .site { grid-template-columns:1fr } }
+
+/* 필터 */
+.filter { display:flex; gap:6px; flex-wrap:wrap }
+.filter button { font:700 14px/1 var(--f-body); padding:10px 16px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer }
+.filter button[aria-pressed="true"] { background:var(--ink); color:var(--bg); border-color:var(--ink) }
+.filter button:focus-visible { outline:2px solid var(--blue); outline-offset:2px }
+
+/* 카드 */
+.grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px }
+@media (max-width:760px) { .grid { grid-template-columns:1fr } }
+.card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:12px; scroll-margin-top:16px; min-width:0 }
+.card:target { outline:3px solid var(--gold); outline-offset:2px }
+.card-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:13px; color:var(--muted) }
+.card-head .no { font-weight:700; font-size:18px; color:var(--ink) }
+.card-head .grp { padding-left:10px; border-left:1px solid var(--line) }
+.pill { margin-left:auto; font-size:12.5px; font-weight:700; padding:5px 11px; border-radius:999px; line-height:1.2 }
+.pill.pub { background:var(--pub-soft); color:var(--pub) }
+.pill.hos.green { background:var(--green-soft); color:var(--green) }
+.pill.hos.blue { background:var(--blue-soft); color:var(--blue) }
+.shot { display:block; padding:0; border:0; background:none; cursor:zoom-in; border-radius:8px; overflow:hidden }
+.shot img { display:block; width:100%; height:auto; max-width:100% }
+.shot:focus-visible { outline:3px solid var(--blue); outline-offset:2px }
+.slogan { font:900 20px/1.4 var(--f-head); letter-spacing:-0.01em }
+dl.meta { margin:0; display:flex; flex-direction:column; gap:4px; font-size:13.5px }
+dl.meta div { display:grid; grid-template-columns:64px 1fr; gap:8px }
+dl.meta dt { color:var(--muted); font-weight:500 }
+dl.meta dd { margin:0; min-width:0 }
+p.meta { font-size:13.5px; color:var(--muted) }
+.note { font-size:13.5px; background:var(--bg); border-radius:8px; padding:8px 12px; color:var(--ink) }
+
+/* 표 */
+.tablebox { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:14px }
+table { border-collapse:collapse; width:100%; min-width:820px; font-size:14px }
+th, td { text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top }
+th { font-size:12.5px; color:var(--muted); font-weight:700; letter-spacing:.02em; background:var(--bg) }
+tr:last-child td { border-bottom:0 }
+td.orig { color:var(--muted) }
+td.new { font-weight:700 }
+td.nw { white-space:nowrap }
+
+/* 목록 */
+.two { display:grid; grid-template-columns:1fr 1fr; gap:20px }
+@media (max-width:760px) { .two { grid-template-columns:1fr } }
+.box { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; display:flex; flex-direction:column; gap:10px; min-width:0 }
+.box h3 { font-size:16px; font-weight:700 }
+.box ul, .box ol { margin:0; padding-left:20px; display:flex; flex-direction:column; gap:4px }
+.asks li { padding-left:2px }
+.asks b { font-weight:700 }
+footer { font-size:13px; color:var(--muted); border-top:1px solid var(--line); padding-top:18px }
+
+/* 크게 보기 */
+[hidden] { display:none !important }
+.zoom { position:fixed; inset:0; background:rgba(8,12,18,.86); display:flex; align-items:center; justify-content:center; padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px)); z-index:20; cursor:zoom-out }
+.zoom img { max-width:100%; max-height:100%; border-radius:6px }
+@media (prefers-reduced-motion:no-preference) { .card { transition:outline-color .2s } }
+</style>
+
+<style>body{margin:0}</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <p class="eyebrow">나은필병원 ㄴ자 옥상 LED · B안 15분 · 2026.11.20</p>
+    <h1>슬로건 50:50 구성 시안</h1>
+    <p class="lead">기존 공익 슬로건 10개와 원장님 슬로건 10개를 한 칸씩 번갈아 넣었습니다. 원장님 슬로건에는 진료과 이름표와 내용에 맞는 아이콘 배지를 예전 관절 배지처럼 붙였습니다.</p>
+    <div class="facts">
+      <span>전체 <b>15분</b> (900초)</span>
+      <span>한 쌍 <b>45초</b> = 슬로건 12초 + 로고 화면 33초</span>
+      <span>슬로건 20칸 = <b>공익 10</b> + <b>원장님 10</b></span>
+      <span>로고 화면 20칸은 지금과 같습니다</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="h-bar">
+    <h2 id="h-bar">15분 구성</h2>
+    <p class="sub">색 칸이 슬로건(12초), 회색 칸이 로고 화면(33초)입니다. 칸을 누르면 아래 화면으로 이동합니다. 슬로건 바탕색은 다섯 칸마다 아침·한낮·오후·저녁 색으로 바뀝니다.</p>
+    <div class="timeline">
+      <div class="bands"><span>아침 · 크림</span><span>한낮 · 복숭아</span><span>오후 · 버터</span><span>저녁 · 노을 분홍</span></div>
+      <div class="bar"><a class="seg s pub" href="#slot-01" style="flex:12" title="01 · 0:00 · 바른 움직임, 나은 미래"><span>1</span></a><span class="seg logo" style="flex:33" title="로고 화면 01 · 0:12"></span><a class="seg s hos green" href="#slot-02" style="flex:12" title="02 · 0:45 · 관절건강, 함께 해요!"><span>2</span></a><span class="seg logo" style="flex:33" title="로고 화면 02 · 0:57"></span><a class="seg s pub" href="#slot-03" style="flex:12" title="03 · 1:30 · 가벼운 걸음, 가벼운 일상"><span>3</span></a><span class="seg logo" style="flex:33" title="로고 화면 03 · 1:42"></span><a class="seg s hos green" href="#slot-04" style="flex:12" title="04 · 2:15 · 무릎 아파도 걸어야 할까? 내 무릎에 맞는 운동과 치료"><span>4</span></a><span class="seg logo" style="flex:33" title="로고 화면 04 · 2:27"></span><a class="seg s pub" href="#slot-05" style="flex:12" title="05 · 3:00 · 맞잡은 손, 함께 걷는 삶"><span>5</span></a><span class="seg logo" style="flex:33" title="로고 화면 05 · 3:12"></span><a class="seg s hos green" href="#slot-06" style="flex:12" title="06 · 3:45 · 인공관절, 내 무릎처럼 ROSA 로봇 인공관절 수술"><span>6</span></a><span class="seg logo" style="flex:33" title="로고 화면 06 · 3:57"></span><a class="seg s pub" href="#slot-07" style="flex:12" title="07 · 4:30 · Feel Good, Feel Better! 오늘도 웃는 하루!"><span>7</span></a><span class="seg logo" style="flex:33" title="로고 화면 07 · 4:42"></span><a class="seg s hos blue" href="#slot-08" style="flex:12" title="08 · 5:15 · 밤마다 아픈 어깨, 회전근개를 확인하세요"><span>8</span></a><span class="seg logo" style="flex:33" title="로고 화면 08 · 5:27"></span><a class="seg s pub" href="#slot-09" style="flex:12" title="09 · 6:00 · 웃음 가득한 내일"><span>9</span></a><span class="seg logo" style="flex:33" title="로고 화면 09 · 6:12"></span><a class="seg s hos blue" href="#slot-10" style="flex:12" title="10 · 6:45 · 컵 들기도 힘든 팔꿈치, 테니스 엘보 예방부터"><span>10</span></a><span class="seg logo" style="flex:33" title="로고 화면 10 · 6:57"></span><a class="seg s pub" href="#slot-11" style="flex:12" title="11 · 7:30 · 움직임이 건강이다"><span>11</span></a><span class="seg logo" style="flex:33" title="로고 화면 11 · 7:42"></span><a class="seg s hos blue" href="#slot-12" style="flex:12" title="12 · 8:15 · 허리 디스크 수술, 양방향 내시경으로"><span>12</span></a><span class="seg logo" style="flex:33" title="로고 화면 12 · 8:27"></span><a class="seg s pub" href="#slot-13" style="flex:12" title="13 · 9:00 · 큰 행복은 작은 손에서부터"><span>13</span></a><span class="seg logo" style="flex:33" title="로고 화면 13 · 9:12"></span><a class="seg s hos green" href="#slot-14" style="flex:12" title="14 · 9:45 · 반복되는 손목 통증, 원인부터 확인하세요"><span>14</span></a><span class="seg logo" style="flex:33" title="로고 화면 14 · 9:57"></span><a class="seg s pub" href="#slot-15" style="flex:12" title="15 · 10:30 · 하루 만 보 걷기 실천"><span>15</span></a><span class="seg logo" style="flex:33" title="로고 화면 15 · 10:42"></span><a class="seg s hos green" href="#slot-16" style="flex:12" title="16 · 11:15 · 밤마다 저린 손, 전문의와 상담하세요"><span>16</span></a><span class="seg logo" style="flex:33" title="로고 화면 16 · 11:27"></span><a class="seg s pub" href="#slot-17" style="flex:12" title="17 · 12:00 · 바른자세 평생건강"><span>17</span></a><span class="seg logo" style="flex:33" title="로고 화면 17 · 12:12"></span><a class="seg s hos green" href="#slot-18" style="flex:12" title="18 · 12:45 · 손가락 절단 사고 시, 119와 함께 전문병원으로"><span>18</span></a><span class="seg logo" style="flex:33" title="로고 화면 18 · 12:57"></span><a class="seg s pub" href="#slot-19" style="flex:12" title="19 · 13:30 · 함께 여는 희망"><span>19</span></a><span class="seg logo" style="flex:33" title="로고 화면 19 · 13:42"></span><a class="seg s hos blue" href="#slot-20" style="flex:12" title="20 · 14:15 · 걷기 힘든 발바닥 통증, 족저근막염을 확인하세요"><span>20</span></a><span class="seg logo" style="flex:33" title="로고 화면 20 · 14:27"></span></div>
+      <div class="ticks"><span>0:00</span><span>3:45</span><span>7:30</span><span>11:15</span><span>15:00</span></div>
+      <div class="legend"><span><i style="background:var(--pub)"></i>공익 슬로건</span><span><i style="background:var(--green)"></i>원장님 슬로건 · 무릎관절·수부</span><span><i style="background:var(--blue)"></i>원장님 슬로건 · 어깨·척추·족부</span><span><i style="background:var(--logo)"></i>로고 화면</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-site">
+    <h2 id="h-site">길에서 보이는 모습</h2>
+    <p class="sub">아래 20칸 화면은 LED에 펼쳐 놓은 평면 그림입니다. 실제로는 지금 영상처럼 입체 방 안에 들어가 길에서 보면 깊이가 생깁니다.</p>
+    <div class="site">
+      <figure><img src="img/site_slogan.jpg" alt="서쪽 교차로 횡단보도에서 본 공익 슬로건 화면 합성" width="1280" height="720"><figcaption>공익 슬로건 · 현장 사진 합성(서쪽 교차로 횡단보도)</figcaption></figure>
+      <figure><img src="img/sim64.jpg" alt="진료과 이름표가 들어간 슬로건의 시점 시뮬레이션" width="1280" height="720"><figcaption>진료과 이름표 슬로건 · 시점 시뮬레이션(지난 64 시안 예시 문구)</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-grid">
+    <h2 id="h-grid">슬로건 20칸</h2>
+    <div class="filter" role="group" aria-label="보기">
+      <button type="button" id="f-all" data-f="all" aria-pressed="true">전체 20</button>
+      <button type="button" id="f-pub" data-f="pub" aria-pressed="false">공익 10</button>
+      <button type="button" id="f-hos" data-f="hos" aria-pressed="false">원장님 10</button>
+    </div>
+    <div class="grid" id="grid">
+<article class="card" id="slot-01" data-kind="pub">
+  <header class="card-head"><span class="no">01</span><span class="time">0:00</span><span class="grp">아침</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s01.jpg" aria-label="01번 화면 크게 보기"><img src="img/s01.jpg" alt="바른 움직임, 나은 미래" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">바른 움직임,<br>나은 미래</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-02" data-kind="hos">
+  <header class="card-head"><span class="no">02</span><span class="time">0:45</span><span class="grp">아침</span><span class="pill hos green">원장님 · 무릎관절센터</span></header>
+  <button class="shot" type="button" data-full="img/s02.jpg" aria-label="02번 화면 크게 보기"><img src="img/s02.jpg" alt="관절건강, 함께 해요!" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">관절건강,<br>함께 해요!</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>무릎 관절</dd></div><div><dt>원본</dt><dd>PPT 8번 · 관절건강 함께해요</dd></div><div><dt>원래 문구</dt><dd>관절건강 / 함께 해요!</dd></div></dl>
+</article>
+<article class="card" id="slot-03" data-kind="pub">
+  <header class="card-head"><span class="no">03</span><span class="time">1:30</span><span class="grp">아침</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s03.jpg" aria-label="03번 화면 크게 보기"><img src="img/s03.jpg" alt="가벼운 걸음, 가벼운 일상" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">가벼운 걸음,<br>가벼운 일상</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-04" data-kind="hos">
+  <header class="card-head"><span class="no">04</span><span class="time">2:15</span><span class="grp">아침</span><span class="pill hos green">원장님 · 무릎관절센터</span></header>
+  <button class="shot" type="button" data-full="img/s04.jpg" aria-label="04번 화면 크게 보기"><img src="img/s04.jpg" alt="무릎 아파도 걸어야 할까? 내 무릎에 맞는 운동과 치료" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">무릎 아파도 걸어야 할까?<br>내 무릎에 맞는 운동과 치료</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>다리</dd></div><div><dt>원본</dt><dd>PPT 9번 · 무릎 운동과 치료</dd></div><div><dt>원래 문구</dt><dd>무릎 아파도 걸어야 할까? / 내무릎에 맞는 운동과 치료 / 정확한 진단과 올바른 솔루션</dd></div></dl>
+</article>
+<article class="card" id="slot-05" data-kind="pub">
+  <header class="card-head"><span class="no">05</span><span class="time">3:00</span><span class="grp">아침</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s05.jpg" aria-label="05번 화면 크게 보기"><img src="img/s05.jpg" alt="맞잡은 손, 함께 걷는 삶" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">맞잡은 손,<br>함께 걷는 삶</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-06" data-kind="hos">
+  <header class="card-head"><span class="no">06</span><span class="time">3:45</span><span class="grp">한낮</span><span class="pill hos green">원장님 · 무릎관절센터</span></header>
+  <button class="shot" type="button" data-full="img/s06.jpg" aria-label="06번 화면 크게 보기"><img src="img/s06.jpg" alt="인공관절, 내 무릎처럼 ROSA 로봇 인공관절 수술" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">인공관절, 내 무릎처럼<br>ROSA 로봇 인공관절 수술</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>수술 로봇</dd></div><div><dt>원본</dt><dd>PPT 6번 · ROSA 로봇 인공관절</dd></div><div><dt>원래 문구</dt><dd>인공관절, 내 무릎처럼 / ROSA 로봇 인공관절 수술</dd></div></dl>
+</article>
+<article class="card" id="slot-07" data-kind="pub">
+  <header class="card-head"><span class="no">07</span><span class="time">4:30</span><span class="grp">한낮</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s07.jpg" aria-label="07번 화면 크게 보기"><img src="img/s07.jpg" alt="Feel Good, Feel Better! 오늘도 웃는 하루!" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">Feel Good,<br>Feel Better!<br>오늘도 웃는 하루!</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-08" data-kind="hos">
+  <header class="card-head"><span class="no">08</span><span class="time">5:15</span><span class="grp">한낮</span><span class="pill hos blue">원장님 · 어깨·상지센터</span></header>
+  <button class="shot" type="button" data-full="img/s08.jpg" aria-label="08번 화면 크게 보기"><img src="img/s08.jpg" alt="밤마다 아픈 어깨, 회전근개를 확인하세요" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">밤마다 아픈 어깨,<br>회전근개를 확인하세요</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>어깨 관절</dd></div><div><dt>원본</dt><dd>PPT 4·5번 · 회전근개, 어깨 운동 4가지</dd></div><div><dt>원래 문구</dt><dd>밤마다 심해지는 어깨 통증, 회전근개손상을 확인하세요 / 회전근개 손상 예방 운동</dd></div></dl><p class="note">두 편 모두 회전근개 내용이라 한 칸으로 묶었습니다.</p>
+</article>
+<article class="card" id="slot-09" data-kind="pub">
+  <header class="card-head"><span class="no">09</span><span class="time">6:00</span><span class="grp">한낮</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s09.jpg" aria-label="09번 화면 크게 보기"><img src="img/s09.jpg" alt="웃음 가득한 내일" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">웃음 가득한<br>내일</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-10" data-kind="hos">
+  <header class="card-head"><span class="no">10</span><span class="time">6:45</span><span class="grp">한낮</span><span class="pill hos blue">원장님 · 어깨·상지센터</span></header>
+  <button class="shot" type="button" data-full="img/s10.jpg" aria-label="10번 화면 크게 보기"><img src="img/s10.jpg" alt="컵 들기도 힘든 팔꿈치, 테니스 엘보 예방부터" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">컵 들기도 힘든 팔꿈치,<br>테니스 엘보 예방부터</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>팔</dd></div><div><dt>원본</dt><dd>PPT 3번 · 테니스 엘보</dd></div><div><dt>원래 문구</dt><dd>컵 들기도 힘든 테니스 엘보 / 예방이 최선입니다</dd></div></dl>
+</article>
+<article class="card" id="slot-11" data-kind="pub">
+  <header class="card-head"><span class="no">11</span><span class="time">7:30</span><span class="grp">오후</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s11.jpg" aria-label="11번 화면 크게 보기"><img src="img/s11.jpg" alt="움직임이 건강이다" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">움직임이<br>건강이다</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-12" data-kind="hos">
+  <header class="card-head"><span class="no">12</span><span class="time">8:15</span><span class="grp">오후</span><span class="pill hos blue">원장님 · 척추센터</span></header>
+  <button class="shot" type="button" data-full="img/s12.jpg" aria-label="12번 화면 크게 보기"><img src="img/s12.jpg" alt="허리 디스크 수술, 양방향 내시경으로" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">허리 디스크 수술,<br>양방향 내시경으로</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>척추</dd></div><div><dt>원본</dt><dd>PPT 7번 · 허리 디스크 양방향 내시경</dd></div><div><dt>원래 문구</dt><dd>허리 디스크 수술 / 양방향 내시경 수술로 / 정밀하고 안전하게</dd></div></dl><p class="note">‘안전하게’처럼 결과를 보장하는 듯한 표현은 심의에서 걸릴 수 있어 뺐습니다.</p>
+</article>
+<article class="card" id="slot-13" data-kind="pub">
+  <header class="card-head"><span class="no">13</span><span class="time">9:00</span><span class="grp">오후</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s13.jpg" aria-label="13번 화면 크게 보기"><img src="img/s13.jpg" alt="큰 행복은 작은 손에서부터" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">큰 행복은<br>작은 손에서부터</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-14" data-kind="hos">
+  <header class="card-head"><span class="no">14</span><span class="time">9:45</span><span class="grp">오후</span><span class="pill hos green">원장님 · 수부·미세재건센터</span></header>
+  <button class="shot" type="button" data-full="img/s14.jpg" aria-label="14번 화면 크게 보기"><img src="img/s14.jpg" alt="반복되는 손목 통증, 원인부터 확인하세요" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">반복되는 손목 통증,<br>원인부터 확인하세요</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>손·손목 뼈</dd></div><div><dt>원본</dt><dd>PPT 1번 · 손목 통증 TFCC</dd></div><div><dt>원래 문구</dt><dd>반복되는 손목 통증, / 진료로 원인을 확인하세요</dd></div></dl>
+</article>
+<article class="card" id="slot-15" data-kind="pub">
+  <header class="card-head"><span class="no">15</span><span class="time">10:30</span><span class="grp">오후</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s15.jpg" aria-label="15번 화면 크게 보기"><img src="img/s15.jpg" alt="하루 만 보 걷기 실천" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">하루 만 보<br>걷기 실천</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-16" data-kind="hos">
+  <header class="card-head"><span class="no">16</span><span class="time">11:15</span><span class="grp">저녁</span><span class="pill hos green">원장님 · 수부·미세재건센터</span></header>
+  <button class="shot" type="button" data-full="img/s16.jpg" aria-label="16번 화면 크게 보기"><img src="img/s16.jpg" alt="밤마다 저린 손, 전문의와 상담하세요" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">밤마다 저린 손,<br>전문의와 상담하세요</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>저린 손</dd></div><div><dt>원본</dt><dd>PPT 2번 · 밤마다 손 저림</dd></div><div><dt>원래 문구</dt><dd>밤마다 반복되는 손 저림 / 정확한 원인 확인을 위해 전문의와 상담하세요</dd></div></dl>
+</article>
+<article class="card" id="slot-17" data-kind="pub">
+  <header class="card-head"><span class="no">17</span><span class="time">12:00</span><span class="grp">저녁</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s17.jpg" aria-label="17번 화면 크게 보기"><img src="img/s17.jpg" alt="바른자세 평생건강" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">바른자세<br>평생건강</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-18" data-kind="hos">
+  <header class="card-head"><span class="no">18</span><span class="time">12:45</span><span class="grp">저녁</span><span class="pill hos green">원장님 · 수부·미세재건센터</span></header>
+  <button class="shot" type="button" data-full="img/s18.jpg" aria-label="18번 화면 크게 보기"><img src="img/s18.jpg" alt="손가락 절단 사고 시, 119와 함께 전문병원으로" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">손가락 절단 사고 시,<br>119와 함께 전문병원으로</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>구급상자</dd></div><div><dt>원본</dt><dd>PPT 10번 · 손가락 절단 응급처치</dd></div><div><dt>원래 문구</dt><dd>손가락 절단 사고 발생 시, 당황하지 말고 !!! / 119에 전화 / 전문병원으로 신속히 이송</dd></div></dl><p class="note">응급처치 순서 대신, 길에서 한눈에 읽히는 한 줄로 줄였습니다.</p>
+</article>
+<article class="card" id="slot-19" data-kind="pub">
+  <header class="card-head"><span class="no">19</span><span class="time">13:30</span><span class="grp">저녁</span><span class="pill pub">공익</span></header>
+  <button class="shot" type="button" data-full="img/s19.jpg" aria-label="19번 화면 크게 보기"><img src="img/s19.jpg" alt="함께 여는 희망" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">함께 여는<br>희망</p>
+  <p class="meta">기존 제안서 공익 슬로건 그대로</p>
+</article>
+<article class="card" id="slot-20" data-kind="hos">
+  <header class="card-head"><span class="no">20</span><span class="time">14:15</span><span class="grp">저녁</span><span class="pill hos blue">원장님 · 족부·족관절센터</span></header>
+  <button class="shot" type="button" data-full="img/s20.jpg" aria-label="20번 화면 크게 보기"><img src="img/s20.jpg" alt="걷기 힘든 발바닥 통증, 족저근막염을 확인하세요" loading="lazy" width="1250" height="625"></button>
+  <p class="slogan">걷기 힘든 발바닥 통증,<br>족저근막염을 확인하세요</p>
+  <dl class="meta"><div><dt>아이콘</dt><dd>발 뼈</dd></div><div><dt>원본</dt><dd>PPT 11번 · 족저근막염</dd></div><div><dt>원래 문구</dt><dd>걷기 힘든 통증 족저근막염, / 무시하다간 허리까지 망가진다</dd></div></dl><p class="note">‘망가진다’처럼 겁을 주는 표현은 부드럽게 바꿨습니다.</p>
+</article>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-table">
+    <h2 id="h-table">원장님 슬로건 다듬기</h2>
+    <p class="sub">보내주신 영상 11편의 화면 문구를 멀리서도 한 번에 읽히는 두 줄로 줄였습니다. 회전근개 두 편(4·5번)은 한 칸으로 묶어 10칸을 맞췄습니다.</p>
+    <div class="tablebox"><table>
+      <thead><tr><th>칸</th><th>PPT 영상</th><th>원래 화면 문구</th><th>전광판 문구</th><th>진료과</th><th>아이콘</th></tr></thead>
+      <tbody><tr><td class="num">02</td><td>8번 · 관절건강 함께해요</td><td class="orig">관절건강 / 함께 해요!</td><td class="new">관절건강, 함께 해요!</td><td class="nw">무릎관절센터</td><td class="nw">무릎 관절</td></tr><tr><td class="num">04</td><td>9번 · 무릎 운동과 치료</td><td class="orig">무릎 아파도 걸어야 할까? / 내무릎에 맞는 운동과 치료 / 정확한 진단과 올바른 솔루션</td><td class="new">무릎 아파도 걸어야 할까? 내 무릎에 맞는 운동과 치료</td><td class="nw">무릎관절센터</td><td class="nw">다리</td></tr><tr><td class="num">06</td><td>6번 · ROSA 로봇 인공관절</td><td class="orig">인공관절, 내 무릎처럼 / ROSA 로봇 인공관절 수술</td><td class="new">인공관절, 내 무릎처럼 ROSA 로봇 인공관절 수술</td><td class="nw">무릎관절센터</td><td class="nw">수술 로봇</td></tr><tr><td class="num">08</td><td>4·5번 · 회전근개, 어깨 운동 4가지</td><td class="orig">밤마다 심해지는 어깨 통증, 회전근개손상을 확인하세요 / 회전근개 손상 예방 운동</td><td class="new">밤마다 아픈 어깨, 회전근개를 확인하세요</td><td class="nw">어깨·상지센터</td><td class="nw">어깨 관절</td></tr><tr><td class="num">10</td><td>3번 · 테니스 엘보</td><td class="orig">컵 들기도 힘든 테니스 엘보 / 예방이 최선입니다</td><td class="new">컵 들기도 힘든 팔꿈치, 테니스 엘보 예방부터</td><td class="nw">어깨·상지센터</td><td class="nw">팔</td></tr><tr><td class="num">12</td><td>7번 · 허리 디스크 양방향 내시경</td><td class="orig">허리 디스크 수술 / 양방향 내시경 수술로 / 정밀하고 안전하게</td><td class="new">허리 디스크 수술, 양방향 내시경으로</td><td class="nw">척추센터</td><td class="nw">척추</td></tr><tr><td class="num">14</td><td>1번 · 손목 통증 TFCC</td><td class="orig">반복되는 손목 통증, / 진료로 원인을 확인하세요</td><td class="new">반복되는 손목 통증, 원인부터 확인하세요</td><td class="nw">수부·미세재건센터</td><td class="nw">손·손목 뼈</td></tr><tr><td class="num">16</td><td>2번 · 밤마다 손 저림</td><td class="orig">밤마다 반복되는 손 저림 / 정확한 원인 확인을 위해 전문의와 상담하세요</td><td class="new">밤마다 저린 손, 전문의와 상담하세요</td><td class="nw">수부·미세재건센터</td><td class="nw">저린 손</td></tr><tr><td class="num">18</td><td>10번 · 손가락 절단 응급처치</td><td class="orig">손가락 절단 사고 발생 시, 당황하지 말고 !!! / 119에 전화 / 전문병원으로 신속히 이송</td><td class="new">손가락 절단 사고 시, 119와 함께 전문병원으로</td><td class="nw">수부·미세재건센터</td><td class="nw">구급상자</td></tr><tr><td class="num">20</td><td>11번 · 족저근막염</td><td class="orig">걷기 힘든 통증 족저근막염, / 무시하다간 허리까지 망가진다</td><td class="new">걷기 힘든 발바닥 통증, 족저근막염을 확인하세요</td><td class="nw">족부·족관절센터</td><td class="nw">발 뼈</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="h-check">
+    <h2 id="h-check">확인 부탁드릴 것</h2>
+    <div class="two">
+      <div class="box">
+        <h3>병원에서 정해 주실 것</h3>
+        <ol class="asks">
+          <li><b>원장님 슬로건 문구</b> · 위 표의 전광판 문구로 괜찮은지</li>
+          <li><b>진료과 배정</b> · 이름표에 넣은 센터가 맞는지</li>
+          <li><b>의료광고 심의</b> · 진료 내용이 들어가므로 심의가 필요한지 병원에서 확인</li>
+          <li><b>ROSA 로봇 문구</b> · 병원에서 쓰는 장비 이름과 표현이 맞는지</li>
+          <li><b>남길 공익 슬로건 10개</b> · 바꾸고 싶은 문구가 있으면 오른쪽 목록에서 골라 주세요</li>
+        </ol>
+      </div>
+      <div class="box">
+        <h3>이번 구성에서 빠지는 공익 슬로건 10개</h3>
+        <ul><li>나은 움직임, 나은 일상</li><li>다시 걷는 행복</li><li>바른 자세 바른 생활</li><li>건강한 걷기 습관</li><li>걷기운동 함께해요</li><li>매일걷기 평생행복</li><li>자세부터 바르게</li><li>몸도 마음도 튼튼하게</li><li>움직이면 건강해요</li><li>건강한 하루 첫 걸음</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <footer><a href="../" style="color:var(--blue);font-weight:700">최종 제안서(B안 15분) 보기</a> · 프리젠 · 나은필병원 LED 슬로건 50:50 시안 · 정지 화면은 각 슬로건 7초 지점입니다. 실제 영상에서는 글자가 박자에 맞춰 나타나고, 아이콘 배지는 이름표와 함께 튀어나옵니다.</footer>
+</main>
+
+<div class="zoom" id="zoom" hidden><img id="zoom-img" alt=""></div>
+
+<script>
+(() => {
+  const btns = document.querySelectorAll('.filter button');
+  const cards = document.querySelectorAll('.card');
+  btns.forEach(b => b.addEventListener('click', () => {
+    const f = b.dataset.f;
+    btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    cards.forEach(c => { c.hidden = !(f === 'all' || c.dataset.kind === f); });
+  }));
+  document.querySelectorAll('.seg.s').forEach(a => a.addEventListener('click', () => {
+    btns[0].click();
+  }));
+  const zoom = document.getElementById('zoom'), zi = document.getElementById('zoom-img');
+  document.querySelectorAll('.shot').forEach(s => s.addEventListener('click', () => {
+    zi.src = s.dataset.full; zi.alt = s.querySelector('img').alt; zoom.hidden = false;
+  }));
+  const close = () => { zoom.hidden = true; zi.removeAttribute('src'); };
+  zoom.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !zoom.hidden) close(); });
+})();
+</script>
+
+</body>
+</html>
