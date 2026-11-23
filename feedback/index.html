@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta property="og:type" content="website">
+<meta property="og:title" content="나은필병원 LED 피드백 반영 확인">
+<meta property="og:description" content="11.13 병원 피드백과 11.20 원장님 슬로건 요청을 항목별로 반영했습니다. 같은 장면을 11.07 시안과 지금으로 나란히 비교, 확인 부탁드릴 것 정리.">
+<meta property="og:image" content="https://seraph0153.github.io/naeun-led-final-b9bbb56d/feedback/media/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<title>나은필병원 LED 피드백 반영 확인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+/* 레이아웃: 위에서 아래로 — 요약(항목 목록) → 11.13 피드백 ①~③ → ④ 진료과·원장님 슬로건 → 추가로 다듬은 것 ⑤~⑦ → 확인 부탁 → 전체 보기 */
+:root {
+  --bg:#F7F4EE; --card:#FFFFFF; --ink:#0E1B2E; --muted:#5D6573; --line:#E4DDD0; --soft:#EFEAE0;
+  --done:#2F8A63; --done-soft:#DCEFE5; --wait:#B9761A; --wait-soft:#FCEBD0; --plus:#2C7DAF; --plus-soft:#DCEBF5;
+  --pub:#D9902B; --hos:#3C9A73; --logo:#D9D3C7; --gold:#F5C518;
+  --f-body:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --f-num:'Inter','Helvetica Neue',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#10161F; --card:#18212D; --ink:#EEF1F5; --muted:#9BA5B3; --line:#2A3544; --soft:#202B38;
+  --done:#5CC29C; --done-soft:#183429; --wait:#F0B256; --wait-soft:#3A2C17; --plus:#5DB0DE; --plus-soft:#162C3B;
+  --pub:#F0B256; --hos:#5CC29C; --logo:#344050; color-scheme:dark; } }
+:root[data-theme="dark"] {
+  --bg:#10161F; --card:#18212D; --ink:#EEF1F5; --muted:#9BA5B3; --line:#2A3544; --soft:#202B38;
+  --done:#5CC29C; --done-soft:#183429; --wait:#F0B256; --wait-soft:#3A2C17; --plus:#5DB0DE; --plus-soft:#162C3B;
+  --pub:#F0B256; --hos:#5CC29C; --logo:#344050; color-scheme:dark; }
+* { box-sizing:border-box }
+body { margin:0; background:var(--bg); color:var(--ink); font:400 15px/1.65 var(--f-body); word-break:keep-all; }
+a { color:var(--plus) }
+.wrap { max-width:1080px; margin:0 auto; padding-block:40px 64px; padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px)); display:flex; flex-direction:column; gap:56px; }
+h1,h2,h3 { text-wrap:balance; margin:0; letter-spacing:-0.01em }
+h1 { font-weight:900; font-size:clamp(28px,5vw,42px); line-height:1.2 }
+h2 { font-weight:900; font-size:clamp(20px,3vw,25px); line-height:1.3 }
+h3 { font-weight:700; font-size:18px; line-height:1.4 }
+p { margin:0 }
+.eyebrow { font:700 12px/1.4 var(--f-body); letter-spacing:.08em; color:var(--muted) }
+.lead { font-size:17px; max-width:62ch }
+.sub { color:var(--muted); max-width:66ch }
+.num { font-family:var(--f-num); font-variant-numeric:tabular-nums }
+section { display:flex; flex-direction:column; gap:18px }
+.top { display:flex; flex-direction:column; gap:14px }
+
+/* 상태 표시 */
+.st { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; padding:4px 10px; border-radius:999px; line-height:1.3; white-space:nowrap }
+.st::before { content:""; width:7px; height:7px; border-radius:50% ; background:currentColor }
+.st.done { background:var(--done-soft); color:var(--done) }
+.st.wait { background:var(--wait-soft); color:var(--wait) }
+.st.plus { background:var(--plus-soft); color:var(--plus) }
+
+/* 한눈에 */
+.toc { background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden }
+.toc a { display:grid; grid-template-columns:34px 1fr auto; gap:12px; align-items:center; padding:12px 16px; color:var(--ink); text-decoration:none; border-top:1px solid var(--line) }
+.toc a:first-child { border-top:0 }
+.toc a:hover, .toc a:focus-visible { background:var(--soft); outline:none }
+.toc .no { font:700 15px/1 var(--f-num); width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:var(--ink); color:var(--bg) }
+.toc .t { min-width:0 }
+.toc .t small { display:block; color:var(--muted); font-size:13px }
+.toc .grp { padding:9px 16px; font-size:12.5px; font-weight:700; letter-spacing:.04em; color:var(--muted); background:var(--soft); border-top:1px solid var(--line) }
+.toc .grp:first-child { border-top:0 }
+@media (max-width:560px) { .toc a { grid-template-columns:30px 1fr } .toc a .st { grid-column:2; justify-self:start } }
+
+/* 항목 카드 */
+.item { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:16px; scroll-margin-top:16px; min-width:0 }
+.item:target { outline:3px solid var(--gold); outline-offset:2px }
+.item-head { display:flex; gap:14px; align-items:flex-start }
+.item-head .no { flex:none; font:700 17px/1 var(--f-num); width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:var(--ink); color:var(--bg); margin-top:2px }
+.item-head .hd { display:flex; flex-direction:column; gap:6px; min-width:0; flex:1 }
+.item-head .meta { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; font-size:13px; color:var(--muted) }
+.qa { display:grid; grid-template-columns:96px 1fr; gap:6px 14px; font-size:15px }
+.qa dt { color:var(--muted); font-size:13px; font-weight:700; padding-top:2px }
+.qa dd { margin:0; min-width:0 }
+.qa .ask { color:var(--muted) }
+@media (max-width:560px) { .qa { grid-template-columns:1fr; gap:2px } .qa dd + dt { margin-top:8px } }
+
+/* 비교 */
+.pair { display:grid; grid-template-columns:1fr 1fr; gap:12px }
+.pair.two-rows { grid-template-columns:1fr 1fr }
+.pair figure { margin:0; position:relative; min-width:0; display:flex; flex-direction:column; gap:6px }
+.pair img { display:block; width:100%; height:auto; border-radius:10px; background:var(--soft) }
+.tag { position:absolute; left:10px; top:10px; font-size:12.5px; font-weight:700; padding:4px 9px; border-radius:6px; background:rgba(14,27,46,.86); color:#fff }
+.tag.now { background:var(--done); }
+.pair figcaption { font-size:13px; color:var(--muted) }
+@media (max-width:560px) { .pair { gap:8px } .tag { left:6px; top:6px; font-size:11.5px; padding:3px 7px } }
+.vid { display:flex; flex-direction:column; gap:8px }
+.vid video { display:block; width:100%; height:auto; border-radius:10px; background:var(--soft) }
+.vid .cap { display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:13px; color:var(--muted) }
+.vid .cap b { color:var(--ink) }
+.note { font-size:13.5px; background:var(--bg); border-radius:8px; padding:9px 12px }
+
+/* 50:50 막대 */
+.bar { display:flex; height:30px; gap:2px }
+.bar i { flex:1; border-radius:3px; display:grid; place-items:center; font:700 10.5px/1 var(--f-num); color:#fff; font-style:normal }
+.bar i.p { background:var(--pub) } .bar i.h { background:var(--hos) }
+.legend { display:flex; flex-wrap:wrap; gap:6px 18px; font-size:13px; color:var(--muted) }
+.legend i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:6px; vertical-align:-1px }
+@media (max-width:560px) { .bar i { font-size:0 } .bar { height:22px; gap:1px } }
+.split { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:18px; align-items:start }
+@media (max-width:760px) { .split { grid-template-columns:1fr } }
+.links { display:flex; flex-wrap:wrap; gap:8px }
+.btn { display:inline-flex; align-items:center; gap:6px; font-weight:700; font-size:14px; padding:10px 14px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); text-decoration:none }
+.btn:hover, .btn:focus-visible { border-color:var(--ink) }
+.btn .arr { color:var(--muted) }
+
+/* 확인 부탁 */
+.asks { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:14px }
+.asks ol { margin:0; padding-left:22px; display:flex; flex-direction:column; gap:8px }
+.asks li b { font-weight:700 }
+.asks li span { color:var(--muted) }
+.reply { display:flex; flex-direction:column; gap:10px; border-top:1px solid var(--line); padding-top:14px }
+.reply pre { margin:0; white-space:pre-wrap; font:400 14px/1.7 var(--f-body); background:var(--bg); border-radius:10px; padding:12px 14px; user-select:all }
+.reply button { align-self:flex-start; font:700 14px/1 var(--f-body); padding:10px 16px; border-radius:10px; border:0; background:var(--ink); color:var(--bg); cursor:pointer }
+.reply button:focus-visible { outline:2px solid var(--plus); outline-offset:2px }
+.reply .ok { font-size:13px; color:var(--done); min-height:1em }
+
+/* 전체 보기 */
+.cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px }
+@media (max-width:640px) { .cards { grid-template-columns:1fr } }
+.go { display:flex; flex-direction:column; gap:4px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; text-decoration:none; color:var(--ink) }
+.go:hover, .go:focus-visible { border-color:var(--ink) }
+.go b { font-size:16px }
+.go span { font-size:13.5px; color:var(--muted) }
+footer { font-size:13px; color:var(--muted); border-top:1px solid var(--line); padding-top:18px }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="top">
+    <p class="eyebrow">나은필병원 ㄴ자 옥상 LED · B안 15분 · 2026.11.23 · 프리젠</p>
+    <h1>보내 주신 의견, 이렇게 반영했습니다</h1>
+    <p class="lead">11월 13일 병원 피드백과 11월 20일 원장님 슬로건 요청을 항목별로 정리했습니다. 같은 장면을 <b>11.07에 보내 드린 시안</b>과 <b>지금</b>으로 나란히 놓았으니 확인해 보시고, 의견은 항목 번호와 함께 보내 주시면 됩니다.</p>
+    <p class="sub">모든 그림은 서쪽 교차로 횡단보도 현장 사진에 영상을 입혀 본 모습입니다. 그림을 누르면 따로 크게 열립니다.</p>
+  </header>
+
+  <nav class="toc" aria-label="반영 항목 한눈에 보기">
+    <div class="grp">11.13 병원 피드백</div>
+    <a href="#i1"><span class="no">1</span><span class="t">멀리서 ‘나은필병원’이 잘 안 보임<small>이름 1.5배 · 가로형 로고로 화면을 꽉 채워 약 4초</small></span><span class="st done">반영 완료</span></a>
+    <a href="#i2"><span class="no">2</span><span class="t">흰 격자 배경 대신 따뜻하고 밝은 색<small>크림 · 복숭아 · 버터 · 노을 분홍</small></span><span class="st done">반영 완료</span></a>
+    <a href="#i3"><span class="no">3</span><span class="t">슬로건이 너무 요란함, 느리고 차분하게<small>바탕 한 색, 천천히 나타나고 사라지게</small></span><span class="st done">반영 완료</span></a>
+    <div class="grp">11.13 · 11.20 진료과 · 원장님 슬로건</div>
+    <a href="#i4"><span class="no">4</span><span class="t">병원·진료과 슬로건, 기존 공익 슬로건과 50:50<small>공익 10 + 원장님 10, 진료과 이름표와 아이콘</small></span><span class="st wait">시안 · 문구 확인 필요</span></a>
+    <div class="grp">11.21 프리젠이 현장 사진으로 다시 점검해 고친 것</div>
+    <a href="#i5"><span class="no">5</span><span class="t">입체를 실제 횡단보도 자리에 맞춤<small>서쪽 교차로 횡단보도(약 111m) 기준으로 다시 계산</small></span><span class="st plus">추가 개선</span></a>
+    <a href="#i6"><span class="no">6</span><span class="t">슬로건 글자를 또렷하게<small>글자 뒤 두께를 빼서 번지지 않게</small></span><span class="st plus">추가 개선</span></a>
+    <a href="#i7"><span class="no">7</span><span class="t">슬로건 속 달리는 사람을 크게<small>글줄 높이의 1.4~2배</small></span><span class="st plus">추가 개선</span></a>
+  </nav>
+
+  <section aria-labelledby="h-a">
+    <h2 id="h-a">11.13 병원 피드백</h2>
+
+    <article class="item" id="i1">
+      <div class="item-head"><span class="no">1</span><div class="hd"><div class="meta"><span>11.13 · 병원</span><span class="st done">반영 완료</span></div><h3>‘나은필병원’ 이름을 크게, 가로형도</h3></div></div>
+      <dl class="qa">
+        <dt>주신 의견</dt><dd class="ask">멀리서 ‘나은필병원’이 잘 안 보입니다. 가로형(심벌 옆 이름)도 꽉 차게 넣고, 세로형 아래 이름도 크게.</dd>
+        <dt>반영한 내용</dt><dd>세로형 로고의 이름을 1.5배로 키웠습니다. 로고 화면마다 가로형 로고가 화면을 꽉 채워 약 4초 머뭅니다(15분 동안 20번).</dd>
+      </dl>
+      <div class="pair">
+        <figure><a href="media/name_before.jpg"><img src="media/name_before.jpg" alt="11.07 시안: 세로형 로고 아래 이름이 작음" width="680" height="560" loading="lazy"></a><span class="tag">11.07 시안</span><figcaption>세로형 이름 · 0:30 같은 장면</figcaption></figure>
+        <figure><a href="media/name_after.jpg"><img src="media/name_after.jpg" alt="지금: 세로형 로고 아래 이름이 1.5배로 커짐" width="680" height="560" loading="lazy"></a><span class="tag now">지금</span><figcaption>이름 1.5배</figcaption></figure>
+        <figure><a href="media/wide_before.jpg"><img src="media/wide_before.jpg" alt="11.07 시안: 같은 시각에 세로형 로고" width="680" height="560" loading="lazy"></a><span class="tag">11.07 시안</span><figcaption>0:24 같은 장면</figcaption></figure>
+        <figure><a href="media/wide_after.jpg"><img src="media/wide_after.jpg" alt="지금: 심벌 옆에 이름이 놓인 가로형 로고가 화면 폭을 꽉 채움" width="680" height="560" loading="lazy"></a><span class="tag now">지금</span><figcaption>가로형 로고, 화면 폭을 꽉 채워 약 4초</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="item" id="i2">
+      <div class="item-head"><span class="no">2</span><div class="hd"><div class="meta"><span>11.13 · 병원</span><span class="st done">반영 완료</span></div><h3>따뜻하고 밝은 배경</h3></div></div>
+      <dl class="qa">
+        <dt>주신 의견</dt><dd class="ask">흰색 격자 배경 대신 따뜻하고 밝은 색으로.</dd>
+        <dt>반영한 내용</dt><dd>입체 방의 벽과 슬로건 바탕을 하루 네 구간에 맞춰 크림 · 복숭아 · 버터 · 노을 분홍으로 바꾸고, 격자는 옅게, 그늘진 벽과 천장도 밝게 했습니다.</dd>
+      </dl>
+      <div class="pair">
+        <figure><a href="media/wall_before.jpg"><img src="media/wall_before.jpg" alt="11.07 시안: 희고 푸른 격자 벽" width="680" height="560" loading="lazy"></a><span class="tag">11.07 시안</span><figcaption>0:18 같은 장면</figcaption></figure>
+        <figure><a href="media/wall_after.jpg"><img src="media/wall_after.jpg" alt="지금: 크림색 따뜻한 벽, 격자는 옅게" width="680" height="560" loading="lazy"></a><span class="tag now">지금</span><figcaption>크림색 벽(첫 구간)</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="item" id="i3">
+      <div class="item-head"><span class="no">3</span><div class="hd"><div class="meta"><span>11.13 · 병원</span><span class="st done">반영 완료</span></div><h3>슬로건을 느리고 차분하게</h3></div></div>
+      <dl class="qa">
+        <dt>주신 의견</dt><dd class="ask">슬로건 20개가 너무 요란합니다. 더 느리고 차분하게.</dd>
+        <dt>반영한 내용</dt><dd>바탕을 한 색으로 고정하고, 박자마다 바뀌던 색 · 튀어 들어오던 단어 · 속도선을 뺐습니다. 글자는 천천히 나타나고 천천히 사라집니다.</dd>
+      </dl>
+      <div class="vid">
+        <video src="media/slogan_cmp.mp4" poster="media/slogan_cmp.jpg" muted loop playsinline autoplay preload="metadata" width="1088" height="444" aria-label="슬로건 03 ‘나은 움직임, 나은 일상’ 12초. 왼쪽 11.07 시안은 바탕색이 바뀌고 글자가 튀어 들어오며, 오른쪽 지금은 크림색 바탕에 글자가 천천히 나타남"></video>
+        <div class="cap"><span><b>왼쪽 · 11.07 시안</b></span><span><b>오른쪽 · 지금</b></span></div>
+        <p class="note">슬로건 03 ‘나은 움직임, 나은 일상’ 12초 (1:30부터), 두 영상이 같은 시각으로 맞춰져 있습니다.</p>
+      </div>
+    </article>
+  </section>
+
+  <section aria-labelledby="h-b">
+    <h2 id="h-b">진료과 · 원장님 슬로건</h2>
+    <article class="item" id="i4">
+      <div class="item-head"><span class="no">4</span><div class="hd"><div class="meta"><span>11.13 · 병원 / 11.20 · 원장님</span><span class="st wait">시안 · 문구 확인 필요</span></div><h3>기존 공익 슬로건과 원장님 슬로건을 50:50으로</h3></div></div>
+      <dl class="qa">
+        <dt>주신 의견</dt><dd class="ask">병원·진료과 슬로건 10개 정도를 따로(11.13). 원장님이 보내 주신 영상 11편의 내용을 기존 공익 슬로건과 50:50으로(11.20).</dd>
+        <dt>반영한 내용</dt><dd>15분 안의 슬로건 20칸을 공익 10개와 원장님 슬로건 10개로 한 칸씩 번갈아 구성했습니다. 원장님 슬로건에는 진료과 이름표와 관절 · 의료기기 아이콘을 붙였고, 문구는 전광판에서 읽히게 짧게 다듬었습니다(회전근개 두 편은 한 칸으로).</dd>
+      </dl>
+      <div class="bar" role="img" aria-label="슬로건 20칸: 홀수 칸 공익, 짝수 칸 원장님 슬로건">
+        <i class="p">01</i><i class="h">02</i><i class="p">03</i><i class="h">04</i><i class="p">05</i><i class="h">06</i><i class="p">07</i><i class="h">08</i><i class="p">09</i><i class="h">10</i><i class="p">11</i><i class="h">12</i><i class="p">13</i><i class="h">14</i><i class="p">15</i><i class="h">16</i><i class="p">17</i><i class="h">18</i><i class="p">19</i><i class="h">20</i>
+      </div>
+      <div class="legend"><span><i style="background:var(--pub)"></i>공익 슬로건 10</span><span><i style="background:var(--hos)"></i>원장님 슬로건 10</span><span>칸마다 12초 슬로건 뒤에 33초 로고 화면</span></div>
+      <div class="split">
+        <div class="vid">
+          <video src="../final-5050/media/d02.mp4" poster="../final-5050/media/d02.jpg" muted loop playsinline autoplay preload="metadata" aria-label="원장님 슬로건 02: 무릎관절센터 이름표 아래 ‘관절건강, 함께 해요!’ 문구와 무릎 관절 아이콘 배지가 나타나는 12초 장면"></video>
+          <p class="note">원장님 슬로건 02 ‘관절건강, 함께 해요!’ · 무릎관절센터 이름표 · 무릎 관절 아이콘</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <p>원장님 슬로건 10칸의 원래 문구와 줄인 문구, 진료과, 아이콘은 <b>문구 표</b>에서 칸마다 확인하실 수 있습니다. 문구가 정해지면 이 구성으로 15분 전체를 만듭니다.</p>
+          <div class="links">
+            <a class="btn" href="../slogan-5050/">슬로건 20칸 문구 표 <span class="arr">→</span></a>
+            <a class="btn" href="../final-5050/">50:50 최종안 시안 <span class="arr">→</span></a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section aria-labelledby="h-c">
+    <h2 id="h-c">추가로 다듬은 것</h2>
+    <p class="sub">11.21에 현장 사진으로 다시 점검하면서 저희가 먼저 고친 부분입니다.</p>
+
+    <article class="item" id="i5">
+      <div class="item-head"><span class="no">5</span><div class="hd"><div class="meta"><span>11.21 · 프리젠</span><span class="st plus">추가 개선</span></div><h3>입체를 실제 횡단보도 자리에 맞춤</h3></div></div>
+      <dl class="qa">
+        <dt>점검한 것</dt><dd class="ask">입체 착시를 처음 잡은 자리(대각선 100m 가정)로 계산해, 실제 횡단보도에서는 두 면의 글줄이 조금 꺾여 보였습니다.</dd>
+        <dt>고친 내용</dt><dd>모든 입체 장면을 서쪽 교차로 횡단보도 현장 사진을 찍은 자리(약 111m)에서 다시 계산했습니다. 가로형 로고도 그 자리에서 보이는 화면 한가운데에 오게 했습니다. 입체 착시는 한 자리에서 가장 정확하게 맞으므로, 기준 자리를 바꾸고 싶으시면 알려 주세요.</dd>
+      </dl>
+    </article>
+
+    <article class="item" id="i6">
+      <div class="item-head"><span class="no">6</span><div class="hd"><div class="meta"><span>11.21 · 프리젠</span><span class="st plus">추가 개선</span></div><h3>슬로건 글자를 또렷하게</h3></div></div>
+      <dl class="qa">
+        <dt>점검한 것</dt><dd class="ask">글자 뒤에 깔린 입체 두께(연한 남색 겹) 때문에 멀리서 보면 글자 테두리가 번져 보였습니다.</dd>
+        <dt>고친 내용</dt><dd>글자 뒤 두께를 빼서 또렷하게 했습니다. 진료과 이름표와 강조 상자, 아이콘은 그대로입니다.</dd>
+      </dl>
+      <div class="pair">
+        <figure><a href="media/text_before.jpg"><img src="media/text_before.jpg" alt="고치기 전: 글자 뒤 두께 때문에 테두리가 번져 보임" width="1000" height="325" loading="lazy"></a><span class="tag">고치기 전</span><figcaption>확대 · 원장님 슬로건 14</figcaption></figure>
+        <figure><a href="media/text_after.jpg"><img src="media/text_after.jpg" alt="지금: 두께를 빼 글자가 또렷함" width="1000" height="325" loading="lazy"></a><span class="tag now">지금</span><figcaption>같은 장면</figcaption></figure>
+      </div>
+    </article>
+
+    <article class="item" id="i7">
+      <div class="item-head"><span class="no">7</span><div class="hd"><div class="meta"><span>11.21 · 프리젠</span><span class="st plus">추가 개선</span></div><h3>슬로건 속 달리는 사람을 크게</h3></div></div>
+      <dl class="qa">
+        <dt>점검한 것</dt><dd class="ask">슬로건 속 달리는 사람이 글자보다 작아 멀리서 잘 보이지 않았습니다.</dd>
+        <dt>고친 내용</dt><dd>달리는 사람이 나오는 슬로건 다섯 칸(01 · 07 · 10 · 11 · 18)에서 글줄 높이의 1.4~2배로 키웠습니다. 글자와 겹치지 않는 자리로 옮겼고, 몇 칸은 옆 그림과 자리를 바꿨습니다.</dd>
+      </dl>
+      <div class="pair">
+        <figure><a href="media/run_before.jpg"><img src="media/run_before.jpg" alt="고치기 전: 슬로건 01 왼쪽 아래 달리는 사람이 작음" width="680" height="560" loading="lazy"></a><span class="tag">고치기 전</span><figcaption>슬로건 01 · 0:08</figcaption></figure>
+        <figure><a href="media/run_after.jpg"><img src="media/run_after.jpg" alt="지금: 달리는 사람이 두 줄 글자 높이만큼 크게" width="680" height="560" loading="lazy"></a><span class="tag now">지금</span><figcaption>글줄 높이의 약 1.7배</figcaption></figure>
+      </div>
+    </article>
+  </section>
+
+  <section aria-labelledby="h-ask">
+    <h2 id="h-ask">확인 부탁드립니다</h2>
+    <div class="asks">
+      <ol>
+        <li><b>①~③ 반영 방향</b> <span>· 이름 크기, 배경 색, 슬로건 속도가 생각하신 방향과 맞는지</span></li>
+        <li><b>원장님 슬로건 문구</b> <span>· 전광판용으로 줄인 문구로 괜찮은지(문구 표 참고)</span></li>
+        <li><b>진료과 배정</b> <span>· 이름표에 넣은 센터가 맞는지</span></li>
+        <li><b>ROSA 로봇 문구</b> <span>· 병원에서 쓰는 장비 이름과 표현이 맞는지</span></li>
+        <li><b>의료광고 사전심의</b> <span>· 진료 내용이 들어가므로 심의가 필요한지 병원에서 확인</span></li>
+        <li><b>남길 공익 슬로건 10개</b> <span>· 바꾸고 싶은 문구가 있는지(문구 표 아래 목록)</span></li>
+        <li><b>송출 규격</b> <span>· 매체사 송출 규격과 실제 LED 화소 수(현장 송출 테스트 전에)</span></li>
+      </ol>
+      <div class="reply">
+        <p>답장하실 때 아래 양식을 복사해 쓰셔도 됩니다.</p>
+        <pre id="reply-text">[나은필병원 LED 피드백 회신]
+① 이름 크게·가로형: 좋음 / 수정 필요 –
+② 따뜻한 배경: 좋음 / 수정 필요 –
+③ 차분한 슬로건: 좋음 / 수정 필요 –
+④ 원장님 슬로건 문구·진료과: 좋음 / 수정 필요 –
+⑤~⑦ 추가로 다듬은 것: 좋음 / 수정 필요 –
+의료광고 심의: 필요 / 불필요 / 확인 중
+기타 의견:</pre>
+        <button type="button" id="copy">회신 양식 복사</button>
+        <span class="ok" id="copy-ok" aria-live="polite"></span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-all">
+    <h2 id="h-all">전체 보기</h2>
+    <div class="cards">
+      <a class="go" href="../"><b>최종 제안서</b><span>15분 구성표, 로고 화면 여섯 가지, 공익 슬로건 20칸</span></a>
+      <a class="go" href="../final-5050/"><b>50:50 최종안 시안</b><span>같은 제안서에서 슬로건 20칸만 공익 10 + 원장님 10으로</span></a>
+      <a class="go" href="https://github.com/seraph0153/naeun-led-final-b9bbb56d/releases/download/v68/naeunpil_LED_B15min_v68_site_crosswalk_1080p.mp4"><b>15분 전체 영상 받기 · 서쪽 횡단보도</b><span>현장 사진 합성 · 1920×1080 · 약 87MB · 누르면 내려받기</span></a>
+      <a class="go" href="https://github.com/seraph0153/naeun-led-final-b9bbb56d/releases/download/v68/naeunpil_LED_B15min_v68_site_front_1080p.mp4"><b>15분 전체 영상 받기 · 병원 앞 길</b><span>현장 사진 합성 · 1920×1080 · 약 122MB · 누르면 내려받기</span></a>
+    </div>
+    <p class="sub">15분 전체 영상은 지금 공익 슬로건 20칸 판입니다. 50:50 구성은 원장님 슬로건 문구가 정해지면 같은 방식으로 만들어 드립니다.</p>
+  </section>
+
+  <footer>프리젠 · 나은필병원 옥상 LED 피드백 반영 확인 · 2026.11.23 · 화면의 ‘시안용’ 표시는 납품 영상에는 들어가지 않습니다.</footer>
+</main>
+
+<script>
+(() => {
+  const btn = document.getElementById('copy'), ok = document.getElementById('copy-ok'), pre = document.getElementById('reply-text');
+  const selectText = () => { const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  btn.addEventListener('click', () => {
+    const done = () => { ok.textContent = '복사했습니다. 카카오톡이나 메일에 붙여 넣어 주세요.'; };
+    const fail = () => { selectText(); ok.textContent = '양식을 선택해 두었습니다. 복사(Ctrl+C / ⌘+C) 해 주세요.'; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(pre.innerText).then(done, fail); else fail();
+  });
+  // 화면 밖 영상은 멈춤(휴대폰 데이터·배터리 아끼기)
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { const p = v.play(); if (p) p.catch(() => {}); } else v.pause(); }), { threshold: 0.2 });
+    document.querySelectorAll('video').forEach(v => io.observe(v));
+  }
+})();
+</script>
+</body>
+</html>
